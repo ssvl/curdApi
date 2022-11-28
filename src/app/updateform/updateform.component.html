@@ -1,0 +1,23 @@
+<form *ngIf="data" [formGroup]="createOrderForm" (ngSubmit)="onSubmit()" id="updateProduct" >
+  <div class="mb-3">
+    <label for="" class="form-label">Name:</label>
+    <input type="text" class="form-control" id="" placeholder="name" value="{{data.name}}" name="name" >
+  </div>
+
+  <div class="mb-3">
+    <label for="2" class="form-label">City:</label>
+    <input type="text" class="form-control" id="2" placeholder="city" value="{{data.city}}" name="city">
+  </div>
+
+  <div class="mb-3">
+    <label for="2" class="form-label">Qty:</label>
+    <input type="text" class="form-control" id="2" placeholder="qty" value="{{data.quntity}}" name="quntity">
+  </div>
+
+  <div class="mb-3">
+    <label for="2" class="form-label">Size:</label>
+    <input type="text" class="form-control" id="2" placeholder="size" value="{{data.size}}" name="size">
+  </div>
+  <button type="submit" >Submit</button>
+
+</form>

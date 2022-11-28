@@ -1,0 +1,63 @@
+<div class="container mt-5">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">No.</th>
+          <th scope="col">Name</th>
+          <th scope="col">City</th>
+          <th scope="col">QTy</th>
+          <th scope="col">Size</th>
+          <th scope="col">Delete</th>
+          <th scope="col">Edit</th>
+  
+  
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let cate of result;index as i">
+          <th scope="row">{{i+1}}</th>
+          <td>{{cate.name}}</td>
+          <td>{{cate.city}}</td>
+          <td>{{cate.quntity}}</td>
+          <td>{{cate.size}}</td>
+          <!-- <td><img src="https://apibahujicholi.lehengabrand.com{{cate.featuredImage}}" width="100px" height="100px"></td> -->
+          <td><button (click)="productdelte(cate._id)"
+              style="background-color: rgb(228, 74, 74); border:none;border-radius:5%"><i class="fa fa-trash-o"
+                style="width: 20px;height:20px;color:white"></i></button></td>
+  
+  
+          <td><button (click)="getdataByID(cate.id)"  routerLink="/update/{{cate._id}}" style="background-color: rgb(7, 102, 20); border:none;border-radius:5%"><i class="fa fa-edit" 
+                style="width: 20px;height:20px;color:white"></i></button></td>
+  
+        </tr>
+      </tbody>
+    </table>
+  
+  
+    <form [formGroup]="msgForm" (ngSubmit)="adddata(this.msgForm.value)">
+      <div class="mb-3">
+        <label for="" class="form-label">Name:</label>
+        <input type="text" class="form-control" id="" placeholder="name" formControlName="name">
+      </div>
+  
+      <div class="mb-3">
+        <label for="2" class="form-label">City:</label>
+        <input type="text" class="form-control" id="2" placeholder="city" formControlName="city">
+      </div>
+  
+      <div class="mb-3">
+        <label for="2" class="form-label">Qty:</label>
+        <input type="text" class="form-control" id="2" placeholder="qty" formControlName="quntity">
+      </div>
+  
+      <div class="mb-3">
+        <label for="2" class="form-label">Size:</label>
+        <input type="text" class="form-control" id="2" placeholder="size" formControlName="size">
+      </div>
+      <button type="submit" >Submit</button>
+  
+    </form>
+  </div>
+  
+  
+  
